@@ -1,0 +1,385 @@
+/*----------------------------------*/
+/* IMPORT FONTS */
+/*----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*----------------------------------*/
+/* ROOT VARIABLES */
+/*----------------------------------*/
+:root {
+    --primary-color: #00aeff;
+    --secondary-color: #000000;
+    --secondary-dark: #000000;
+    --white-color: #ffffff;
+    --light-bg: #f5f5f5;
+    --light-text: #777777;
+    --border-color: #e0e0e0;
+
+    --font-small: 0.9em;
+    --font-smaller: 0.75em;
+
+    --fw3: 300;
+    --fw5: 500;
+    --fw6: 600;
+    --fw7: 700;
+    --fw8: 800;
+
+    --trans-bg: background-color 0.3s, color 0.3s;
+}
+
+/*----------------------------------*/
+/* GLOBAL ELEMENTS */
+/*----------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    background-color: var(--white-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+strong {
+    font-weight: var(--fw8);
+}
+
+.container {
+    max-width: 75em; /* ~1200px */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.flexitem {
+    display: flex;
+    align-items: center;
+}
+
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*----------------------------------*/
+/* HEADER TOP */
+/*----------------------------------*/
+.header-top {
+    background-color: var(--light-bg);
+    font-size: var(--font-smaller);
+    padding: 0.5em 0;
+}
+
+.header-top .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top ul {
+    display: flex;
+    gap: 1.5em;
+}
+
+.header-top li {
+    position: relative;
+}
+
+.header-top li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    min-width: 8em;
+    padding: 0.5em 0;
+    z-index: 10;
+}
+
+.header-top li:hover > ul {
+    display: block;
+}
+
+.header-top li ul li a {
+    padding: 0.5em 1em;
+    display: block;
+    font-weight: var(--fw5);
+    color: var(--secondary-color);
+}
+
+.header-top li ul li.current a {
+    background-color: var(--border-color);
+}
+
+/*----------------------------------*/
+/* HEADER NAV */
+/*----------------------------------*/
+.header-nav {
+    padding: 0.5em 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    background-color: var(--white-color);
+}
+
+.header-nav .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav .logo a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75em;
+    font-weight: var(--fw8);
+    position: relative;
+    padding-left: 0.5em;
+}
+
+.header-nav nav ul {
+    display: flex;
+    gap: 1.5em;
+}
+
+.header-nav li.has-child {
+    position: relative;
+}
+
+.header-nav li.has-child .mega {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 70em;
+    background: var(--light-bg);
+    padding: 1.5em;
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.1);
+    z-index: 20;
+}
+
+.header-nav li.has-child:hover .mega {
+    display: flex;
+}
+
+.mega {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.mega .flexcol {
+    flex: 1;
+}
+
+.mega h4 {
+    font-size: 1em;
+    font-weight: var(--fw7);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.mega ul li a {
+    font-size: var(--font-small);
+    display: block;
+    padding: 0.25em 0;
+    color: var(--secondary-color);
+    transition: var(--trans-bg);
+}
+
+.mega ul li a:hover {
+    color: var(--primary-color);
+}
+
+.view-all {
+    font-size: var(--font-small);
+    margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--primary-color);
+}
+
+.header-nav .right ul {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.header-nav .icon-large {
+    font-size: 1.5em;
+    position: relative;
+}
+
+.fly-item {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.6em;
+    width: 1.2em;
+    height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/*----------------------------------*/
+/* HEADER MAIN (SEARCH & CATEGORIES) */
+/*----------------------------------*/
+.header-main {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1em 0;
+}
+
+.dpt-cat {
+    width: 20em;
+}
+
+.dpt-head {
+    background-color: #fff;
+    color: var(--secondary-color);
+    padding: 0.75em 1em;
+    border-radius: 0.5em 0.5em 0 0;
+    font-weight: var(--fw6);
+}
+
+.search-box {
+    flex: 1;
+}
+
+.search-box form {
+    position: relative;
+    width: 100%;
+}
+
+.search-box input[type="search"] {
+    width: 100%;
+    padding: 0.75em 1em 0.75em 3em;
+    border-radius: 0.5em;
+    border: none;
+    font-size: var(--font-small);
+}
+
+.search-box button {
+    display: none;
+}
+
+/*----------------------------------*/
+/* FOOTER */
+/*----------------------------------*/
+footer {
+    background-color: var(--light-bg);
+    padding: 2em 1em;
+    text-align: center;
+    font-size: var(--font-small);
+}
+
+/*----------------------------------*/
+/* RESPONSIVE */
+/*----------------------------------*/
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1em;
+    }
+
+    .flexitem, .flexcol {
+        flex-direction: column;
+    }
+
+    .header-nav nav ul,
+    .header-nav .right ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .mega {
+        position: relative;
+        width: 100%;
+        padding: 1em;
+        flex-direction: column;
+    }
+
+    .dpt-cat {
+        width: 100%;
+    }
+
+    .search-box input[type="search"] {
+        padding-left: 2.5em;
+    }
+
+    .mobile-hide {
+        display: none; /* hide on small screens only */
+    }
+}
+
+/*----------------------------------*/
+/* BUTTONS */
+/*----------------------------------*/
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+    font-size: var(--font-small);
+    transition: var(--trans-bg);
+}
+
+.primary-button:hover {
+    background-color: var(--secondary-dark);
+}
+
+/*----------------------------------*/
+/* ICONS */
+/*----------------------------------*/
+.icon-small {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.icon-large {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+/*----------------------------------*/
+/* UTILITY CLASSES */
+/*----------------------------------*/
+.mobile-hide {
+    display: block; /* show by default on desktop */
+}
